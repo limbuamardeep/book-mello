@@ -65,7 +65,7 @@ function MobileGenreAccordion({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-between text-left",
+          "px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-between text-left over",
           isOpen
             ? "bg-brand-blue/5 text-brand-blue shadow-sm ring-1 ring-brand-blue/20"
             : "hover:bg-muted/60 text-foreground"
@@ -224,7 +224,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Top Announcement / Trust Bar */}
       <div className="bg-brand-blue text-white text-xs py-1.5 px-4 text-center font-medium tracking-wide">
         <div className="container mx-auto flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
           <span className="flex items-center gap-1.5">
@@ -253,7 +252,6 @@ export function Navbar() {
       >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between gap-4">
-            {/* Logo */}
             <Link
               href="/"
               className="flex items-center gap-2 group shrink-0"
@@ -354,7 +352,6 @@ export function Navbar() {
               </div>
             </nav>
 
-            {/* Actions */}
             <div className="hidden md:flex items-center gap-3">
               <form className="relative w-56 lg:w-64" onSubmit={submitSearch}>
                 <label htmlFor="desktop-book-search" className="sr-only">
@@ -416,7 +413,6 @@ export function Navbar() {
               </Button>
             </div>
 
-            {/* Mobile Menu Toggle */}
             <div className="flex md:hidden items-center gap-2">
               <Button
                 variant="outline"
@@ -447,9 +443,8 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-2">
+          <div className="md:hidden absolute top-full left-0 w-full max-h-[calc(100dvh-5rem)] overflow-y-auto overscroll-contain bg-background border-b border-border p-4 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-2">
             <form className="relative w-full" onSubmit={submitSearch}>
               <label htmlFor="mobile-book-search" className="sr-only">
                 Search books and authors
@@ -488,20 +483,6 @@ export function Navbar() {
               <MobileGenreAccordion
                 onClose={() => setMobileMenuOpen(false)}
               />
-              <Link
-                href="/all?filter=featured"
-                className="px-4 py-2.5 rounded-lg hover:bg-muted font-medium transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Staff Picks
-              </Link>
-              <Link
-                href="/all?filter=new"
-                className="px-4 py-2.5 rounded-lg hover:bg-muted font-medium transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                New Arrivals
-              </Link>
               <div className="h-px bg-border my-2"></div>
               <Link
                 href="/login"

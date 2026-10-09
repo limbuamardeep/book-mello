@@ -115,7 +115,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const totalCount = useMemo(() => {
-    return items.reduce((sum, item) => sum + item.quantity, 0);
+    return items.length;
   }, [items]);
 
   const subtotal = useMemo(() => {

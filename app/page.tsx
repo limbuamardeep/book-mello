@@ -10,12 +10,11 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getBooks } from "@/lib/books";
-import { BookCard } from "@/components/books/book-card";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/home/hero-section";
-import BookCarousel from "@/components/featureCarousel/feature-carousel";
 import { InfiniteSlider } from "@/components/infiniteSlider/infinite-slider";
+import BookCarousel from "@/components/featureCarousel/book-carousel";
 
 export default async function Home() {
   const books = await getBooks();
@@ -61,7 +60,8 @@ export default async function Home() {
             <div className="w-full relative mt-8">
               <BookCarousel
                 books={featuredBooks}
-                options={{ loop: true, align: "center" }}
+                visibleCount={4}
+                autoplay_MS={2000}
               />
             </div>
           </div>

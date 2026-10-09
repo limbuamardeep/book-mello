@@ -185,4 +185,20 @@ input:disabled {
   height: auto;
   aspect-ratio: 2/3;
   object-fit: cover;
+}.carousel-spotlight{
+  position:absolute;
+  z-index: 0;
+  top:-48%;
+  left:50%;
+  width:135%;
+  height: 70%;
+  clip-path: polygon(43% 0,57% 0,100% 100%,0 100%);
+  filter:blur(12px);
+  pointer-events: none;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,229,164,0.36),
+    rgba(255,220,130,0.12) 72%,
+    transparent
+  )
 }
